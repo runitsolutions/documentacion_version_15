@@ -1,6 +1,6 @@
-ODOO 12 LOCAL HOST o VPS (Desarrollo o Producción) Update 17-10-2020
+ODOO 15 LOCAL HOST o VPS (Desarrollo o Producción) Update 17-10-2020
 
-Instalar odoo 12 y servicios necesarios para la localización de CR
+Instalar odoo 15 y servicios necesarios para la localización de CR
 ** La guía para desinstalar odoo esta al final de este instructivo **
 
 Se recomienda altamente NO instalar odoo con el usuario root en un VPS cloud, ver el archivo de recomendaciones
@@ -9,34 +9,34 @@ Se recomienda altamente NO instalar odoo con el usuario root en un VPS cloud, ve
 Actualizar ubuntu
 sudo apt-get update && sudo apt-get upgrade -y
 
-2. Instalar odoo12
+2. Instalar odoo15
 Entrar al servidor o ir a la terminal local
-Descargar el ejecutable odoo12.sh
-sudo git clone https://github.com/odoocr/documentacion_version_12.git
+Descargar el ejecutable odoo15.sh
+sudo git clone https://github.com/runitsolutions/documentacion_version_15.git
 
 Configurar los permisos del archivo
-sudo chmod +x odoo12.sh
+sudo chmod +x odoo15.sh
 
 Ejecutar el archivo
-./odoo12.sh
+./odoo15.sh
 Darle Y o S y luego ENTER
 
 *** si es instalación local para desarrollo, deshabilitar el inicio automatico de odoo ***
-sudo service odoo12 stop
-sudo systemctl disable odoo12
+sudo service odoo15 stop
+sudo systemctl disable odoo15
 ******************************************************************************************
 
 3. Clonar los repositorios de los módulos
-cd /opt/odoo12/extra-addons
+cd /opt/odoo15/extra-addons
 
 Descargar los modulos de l10n_cr
-sudo git clone https://github.com/odoocr/l10n_cr.git
+sudo git clone https://github.com/runitsolutions/l10n_cr.git
 
-4. Instalar requerimientos de odoocr
-sudo pip3 install -r /opt/odoo12/extra-addons/l10n_cr/requirements.txt
+4. Instalar requerimientos de runitsolutions
+sudo pip3 install -r /opt/odoo15/extra-addons/l10n_cr/requirements.txt
 
 5. Modificar el archivo conf de acuerdo a su ambiente
-sudo vim /opt/odoo/config/odoo12.conf
+sudo vim /opt/odoo/config/odoo15.conf
 Sustituir "vim" por el editor de texto de su elección
 
 Agregar la ruta completa de los módulos personalizados y de l10n_cr al addons_path
@@ -44,14 +44,14 @@ Agregar la ruta completa de los módulos personalizados y de l10n_cr al addons_p
 Ejemplo:
 
 addons_path =
-    /opt/odoo12/odoo/addons,
-    /opt/odoo12/odoo/odoo/addons,
-    /opt/odoo12/extra-addons,
-    /opt/odoo12/extra-addons/l10n_cr,
-    /opt/odoo12/extra-addons/sus-addons-personalizados
+    /opt/odoo15/odoo/addons,
+    /opt/odoo15/odoo/odoo/addons,
+    /opt/odoo15/extra-addons,
+    /opt/odoo15/extra-addons/l10n_cr,
+    /opt/odoo15/extra-addons/sus-addons-personalizados
 
 Guardar cambios y reiniciar odoo
-sudo service odoo12 restart
+sudo service odoo15 restart
 
 ** SALIR de la terminal de ubuntu
 exit y ENTER
@@ -113,16 +113,16 @@ DESINSTALAR ODOO
 * Borrar postgresql
 
 DETENER EL SERVICIO DE ODOO
-  sudo service odoo12 stop
+  sudo service odoo15 stop
 BORRAR LOS ARCHIVOS DE ODOO
   Borra todas las versiones
   sudo rm -R /opt/odoo
   Borra una versión (para multiversiones en desarrollo)
-  sudo rm -R /opt/odoo/version (ej: 12.0)
+  sudo rm -R /opt/odoo/version (ej: 15.0)
 BORRAR EL ARCHIVO CONF
   Borra una version especifica
-  sudo rm -f /opt/odoo/version (ej: odoo12.conf)
-  sudo update-rc.d -f odoo12 remove 
+  sudo rm -f /opt/odoo/version (ej: odoo15.conf)
+  sudo update-rc.d -f odoo15 remove 
 
 BORRAR USUARIO Y GRUPO
   sudo userdel -r postgres

@@ -1,6 +1,6 @@
-Ultima actualización: 27-06-2020 repo odoocr/l10n_cr
+Ultima actualización: 27-06-2020 repo runitsolutions/l10n_cr
 
-Abrir sesión en odoo 12 para continuar
+Abrir sesión en odoo 15 para continuar
 
 01. Activar modo desarrollador
 

@@ -6,9 +6,9 @@ Odoo Deploy Tools
 
 ## odoo.service
 
-This file is used from odooxx.sh for to install Odoo Start Service
+This file is used from odoo15.sh for to install Odoo Start Service
 
-## odooxx.sh
+## odoo15.sh
 This script install Odoo in Your Server
 
 ## Requirements
@@ -35,7 +35,7 @@ This script install Odoo in Your Server
 1. Copy this Folder in your System (Desktop, Downloads, etc.)
 2. Go to Directory and open a terminal
 3. chmod +x  *.sh
-4. Execute: ./odooxx.sh
+4. Execute: ./odoo15.sh
 5. Enjoy
 
 ### Ubuntu Server (VPS)
@@ -43,16 +43,16 @@ This script install Odoo in Your Server
 1. Copy this Folder in your User Home Directory using Filezilla or WinSCP OR SCP command)
 2. Go to this Folder by terminal
 3. chmod +x  *.sh
-4. Execute: ./odooxx.sh
+4. Execute: ./odoo15.sh
 5. Enjoy
 
 ### Odoo Service Manager
 
-* sudo systemctl status odooxx (shows state Odoo service)
-* sudo systemctl start odooxx (start service)
-* sudo systemctl stop odooxx (stop service)
-* sudo systemctl restart odooxx (restart service)
-* sudo systemctl disable odooxx (disable autostart)
+* sudo systemctl status odoo15 (shows state Odoo service)
+* sudo systemctl start odoo15 (start service)
+* sudo systemctl stop odoo15 (stop service)
+* sudo systemctl restart odoo15 (restart service)
+* sudo systemctl disable odoo15 (disable autostart)
 * sudo tail -f /opt/odoo/xx.0/log/ (Shows Live Odoo Log)
 
 
